@@ -10,8 +10,10 @@
 	--bg-secondary: #f5f5f5;
 	--border: #e0e0e0;
 	--shadow: rgba(0, 0, 0, 0.1);
+	--shadow-tt: #b1b1b1;
 	--error: #d32f2f;
-
+	--gradient: hsla(216, 4%, 73%, 0.2);
+	--cnt-back: linear-gradient(121deg, hsla(210, 100%, 23%, 0.1), hsla(216, 4%, 73%, 0.2));
 }
 body.dark-theme {
 	--primary: #90caf9;
@@ -25,6 +27,8 @@ body.dark-theme {
 	--border: #333333;
 	--shadow: rgba(0, 0, 0, 0.3);
 	--error: #f44336;
+	--gradient: hsla(210, 100%, 23%, 0.2);
+	--cnt-back: linear-gradient(292deg, hsl(210, 68%, 26%), hsla(0, 0%, 0%, 0.951));
 }
 
 * {
@@ -42,6 +46,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	background-color: var(--bg-secondary);
+	background: var(--cnt-back);
 	color: var(--text-primary);
 	line-height: 1.5;
 	transition: background-color 0.3s ease, color 0.3s ease;
@@ -82,15 +87,21 @@ body {
 
 /* Контейнер */
 .container {
-	background: var(--bg-primary);
+	background: radial-gradient(
+		farthest-corner circle at 0% 0%,
+		var(--gradient) 0%,
+		var(--bg-primary) 100%
+	);
+
 	padding: 2.5rem;
 	border-radius: 12px;
-	box-shadow: 0 8px 24px var(--shadow);
+	/* box-shadow: 0 8px 24px var(--shadow); */
+	box-shadow: 20px 20px 50px var(--shadow), -20px -20px 50px var(--bg-primary);
 	max-width: 800px;
 	width: 100%;
 	margin: 2rem;
 	border: 1px solid var(--border);
-	transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+	transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.1s ease;
 }
 
 /* Заголовок */
