@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Fluid Font Size Calculator</title>
+		<title>Адаптивный размер шрифта</title>
+		<!-- Fluid Font Size Calculator -->
 		<link rel="stylesheet" href="styles.css" />
 		<link rel="icon" href="image/favicon.ico" type="image/x-icon" />
 		<link rel="apple-touch-icon" sizes="180x180" href="image/apple-touch-icon.png" />
@@ -13,35 +14,41 @@
 	</head>
 	<body>
 		<div class="container">
-			<h1>Адаптивный размер шрифта</h1>
-			<form id="calculator">
-				<label>
-					Минимальная ширина экрана (Vmin):
-					<input type="number" id="vmin" value="480" required />
-				</label>
-				<label>
-					Максимальная ширина экрана (Vmax):
-					<input type="number" id="vmax" value="1280" required />
-				</label>
-				<label>
-					Минимальный размер шрифта (Fmin):
-					<input type="number" id="fmin" value="16" required />
-				</label>
-				<label>
-					Максимальный размер шрифта (Fmax):
-					<input type="number" id="fmax" value="24" required />
-				</label>
-				<button type="submit">Рассчитать</button>
-				<button id="reset">Сбросить значения</button>
-			</form>
-
-			<div class="result">
+			<header class="header">
+				<h1>Адаптивный размер шрифта</h1>
+			</header>
+			<section class="calculator-section">
+				<form id="calculator">
+					<div class="form-group">
+						<label for="vmin">Минимальная ширина экрана (Vmin):</label>
+						<input type="number" id="vmin" value="480" min="1" required />
+					</div>
+					<div class="form-group">
+						<label for="vmax">Максимальная ширина экрана (Vmax):</label>
+						<input type="number" id="vmax" value="1280" min="1" required />
+					</div>
+					<div class="form-group">
+						<label for="fmin">Минимальный размер шрифта (Fmin):</label>
+						<!-- так-же это может быть минимальный размер блока -->
+						<input type="number" id="fmin" value="16" min="1" required />
+					</div>
+					<div class="form-group">
+						<label for="fmax">Максимальный размер шрифта (Fmax):</label>
+						<!-- так-же это может быть максимальным размером блока -->
+						<input type="number" id="fmax" value="24" min="1" required />
+					</div>
+					<div class="button-group">
+						<button type="submit">Рассчитать</button>
+						<button type="button" id="reset">Сбросить</button>
+					</div>
+				</form>
+			</section>
+			<section class="result-section">
 				<h2>Результат:</h2>
-				<p id="formula"></p>
+				<p id="formula" class="formula"></p>
 				<canvas id="graph" width="600" height="400"></canvas>
-			</div>
+			</section>
 		</div>
-
 		<script src="script.js"></script>
 	</body>
 </html>
