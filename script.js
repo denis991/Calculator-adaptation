@@ -53,11 +53,10 @@ document.addEventListener('DOMContentLoaded', () => {
 				}
 			}
 		});
-		updateResult(); // Обновляем результат с новым языком
+		updateResult();
 	};
 
 	// Переключение языка
-	// работает всё ок
 	languageToggle.addEventListener('click', () => {
 		currentLanguage = currentLanguage === 'ru' ? 'en' : 'ru';
 		translatePage();
@@ -66,9 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	// Переключение темы
 	themeToggle.addEventListener('click', () => {
 		document.body.classList.toggle('dark-theme');
-		// клас корректно меняется  у body class="light-theme" но нечего больше не происзодит
 		document.body.classList.toggle('light-theme');
-		updateResult(); // Перерисовываем график с новой темой
+		updateResult();
 	});
 
 	// Загрузка сохраненных значений
@@ -175,7 +173,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		ctx.restore();
 
 		// График
-		// с графиком всё идеально но я думаю его лучше сделать цветным при тёмной теме
 		ctx.beginPath();
 		ctx.strokeStyle = getComputedStyle(document.body).getPropertyValue('--primary');
 		ctx.lineWidth = 3;

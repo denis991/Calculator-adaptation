@@ -11,9 +11,9 @@
 	--border: #e0e0e0;
 	--shadow: rgba(0, 0, 0, 0.1);
 	--error: #d32f2f;
-}
 
-.dark-theme {
+}
+body.dark-theme {
 	--primary: #90caf9;
 	--primary-hover: #64b5f6;
 	--secondary: #ce93d8;
@@ -29,7 +29,6 @@
 
 * {
 	box-sizing: border-box;
-	transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 body {
@@ -45,6 +44,7 @@ body {
 	background-color: var(--bg-secondary);
 	color: var(--text-primary);
 	line-height: 1.5;
+	transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .controls {
@@ -90,6 +90,7 @@ body {
 	width: 100%;
 	margin: 2rem;
 	border: 1px solid var(--border);
+	transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Заголовок */
@@ -99,31 +100,31 @@ body {
 	text-align: center;
 	margin-bottom: 2rem;
 	font-weight: 600;
+	transition: color 0.3s ease;
 }
 
 /* Секция калькулятора */
 .calculator-section {
 	margin-bottom: 2.5rem;
 }
-/* это не работает !! мне нужны отступы чтобы красивее выгледело .. */
-#calculator, {
-	display: grid;
-	gap: 10px;
-	justify-content: start;
-	align-items: center;
-	justify-items: stretch;
+
+#calculator {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
 }
 
 .form-group {
-	margin-bottom: 1.75rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
 }
 
 .form-group label {
-	display: block;
 	font-weight: 500;
 	color: var(--text-primary);
-	margin-bottom: 0.75rem;
 	font-size: 0.95rem;
+	transition: color 0.3s ease;
 }
 
 .form-group input {
@@ -134,7 +135,8 @@ body {
 	font-size: 1rem;
 	background-color: var(--bg-primary);
 	color: var(--text-primary);
-	transition: border-color 0.3s ease, box-shadow 0.3s ease;
+	transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease,
+		color 0.3s ease;
 }
 
 .form-group input:focus {
@@ -148,7 +150,7 @@ body {
 	display: flex;
 	gap: 1rem;
 	justify-content: center;
-	margin-top: 2rem;
+	margin-top: 1.5rem;
 }
 
 button {
@@ -207,6 +209,7 @@ button.secondary:active {
 	color: var(--text-primary);
 	margin-bottom: 1.5rem;
 	font-weight: 600;
+	transition: color 0.3s ease;
 }
 
 .formula {
@@ -218,6 +221,7 @@ button.secondary:active {
 	background-color: var(--bg-secondary);
 	border-radius: 8px;
 	font-family: 'Roboto Mono', monospace;
+	transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 canvas {
@@ -226,6 +230,7 @@ canvas {
 	box-shadow: 0 4px 12px var(--shadow);
 	max-width: 100%;
 	background-color: var(--bg-primary);
+	transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .error {
