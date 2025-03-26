@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fluid Font Size Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Адаптивный размер шрифта</h1>
+    <form id="calculator">
+      <label>
+        Минимальная ширина экрана (Vmin):
+        <input type="number" id="vmin" value="480" required>
+      </label>
+      <label>
+        Максимальная ширина экрана (Vmax):
+        <input type="number" id="vmax" value="1280" required>
+      </label>
+      <label>
+        Минимальный размер шрифта (Fmin):
+        <input type="number" id="fmin" value="16" required>
+      </label>
+      <label>
+        Максимальный размер шрифта (Fmax):
+        <input type="number" id="fmax" value="24" required>
+      </label>
+      <button type="submit">Рассчитать</button>
+      <button id="reset">Сбросить значения</button>
+    </form>
+
+    <div class="result">
+      <h2>Результат:</h2>
+      <p id="formula"></p>
+      <canvas id="graph" width="600" height="400"></canvas>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
