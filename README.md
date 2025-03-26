@@ -27,10 +27,3 @@ This project is a simple calculator that generates CSS `calc()` formulas for res
 ### Live Demo
 
 You can try the live demo [here](#) (insert your deployed URL if applicable).
-
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/Fluid-Font-Calculator.git
-   ```
