@@ -12,39 +12,57 @@
 		<link rel="icon" type="image/png" sizes="16x16" href="image/favicon-16x16.png" />
 		<link rel="manifest" href="image/site.webmanifest" />
 	</head>
-	<body>
+	<body class="light-theme">
+		<div class="controls">
+			<button id="theme-toggle" class="icon-button" aria-label="Переключить тему">
+				<svg viewBox="0 0 24 24" width="20" height="20">
+					<path
+						fill="currentColor"
+						d="M12,18C11.11,18 10.26,17.8 9.5,17.45C11.56,16.5 13,14.42 13,12C13,9.58 11.56,7.5 9.5,6.55C10.26,6.2 11.11,6 12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31L23.31,12L20,8.69Z"
+					/>
+				</svg>
+			</button>
+			<button id="language-toggle" class="icon-button" aria-label="Switch language">
+				<svg viewBox="0 0 24 24" width="20" height="20">
+					<path
+						fill="currentColor"
+						d="M12.87,15.07L10.33,12.56L10.36,12.53C12.1,10.59 13.34,8.36 14.07,6H17V4H10V2H8V4H1V6H12.17C11.5,7.92 10.44,9.75 9,11.35C8.07,10.32 7.3,9.19 6.69,8H4.69C5.42,9.63 6.42,11.17 7.67,12.56L2.58,17.58L4,19L9,14L12.11,17.11L12.87,15.07M18.5,10H16.5L12,22H14L15.12,19H19.87L21,22H23L18.5,10M15.88,17L17.5,12.67L19.12,17H15.88Z"
+					/>
+				</svg>
+			</button>
+		</div>
 		<div class="container">
 			<header class="header">
-				<h1>Адаптивный размер шрифта</h1>
+				<h1 data-i18n="title">Адаптивный размер шрифта</h1>
 			</header>
 			<section class="calculator-section">
 				<form id="calculator">
 					<div class="form-group">
-						<label for="vmin">Минимальная ширина экрана (Vmin):</label>
+						<label for="vmin" data-i18n="vmin-label">Минимальная ширина экрана (Vmin):</label>
 						<input type="number" id="vmin" value="480" min="1" required />
 					</div>
 					<div class="form-group">
-						<label for="vmax">Максимальная ширина экрана (Vmax):</label>
+						<label for="vmax" data-i18n="vmax-label">Максимальная ширина экрана (Vmax):</label>
 						<input type="number" id="vmax" value="1280" min="1" required />
 					</div>
 					<div class="form-group">
-						<label for="fmin">Минимальный размер шрифта (Fmin):</label>
+						<label for="fmin" data-i18n="fmin-label">Минимальный размер шрифта (Fmin):</label>
 						<!-- так-же это может быть минимальный размер блока -->
 						<input type="number" id="fmin" value="16" min="1" required />
 					</div>
 					<div class="form-group">
-						<label for="fmax">Максимальный размер шрифта (Fmax):</label>
+						<label for="fmax" data-i18n="fmax-label">Максимальный размер шрифта (Fmax):</label>
 						<!-- так-же это может быть максимальным размером блока -->
 						<input type="number" id="fmax" value="24" min="1" required />
 					</div>
 					<div class="button-group">
-						<button type="submit">Рассчитать</button>
-						<button type="button" id="reset">Сбросить</button>
+						<button type="submit" class="primary" data-i18n="calculate">Рассчитать</button>
+						<button type="button" id="reset" class="secondary" data-i18n="reset">Сбросить</button>
 					</div>
 				</form>
 			</section>
 			<section class="result-section">
-				<h2>Результат:</h2>
+				<h2 data-i18n="result">Результат:</h2>
 				<p id="formula" class="formula"></p>
 				<canvas id="graph" width="600" height="400"></canvas>
 			</section>
